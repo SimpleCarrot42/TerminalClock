@@ -11,6 +11,9 @@ To run the app you need to:
 
 #### 3. Run the app and enjoy!
  - `python clock.py`
+Current release
+<img width="1920" height="1048" alt="Screenshot From 2025-08-29 19-51-14" src="https://github.com/user-attachments/assets/46cdd18c-dd0c-4b0f-a1c4-4f40d4e0ee18" />
 
+Old version
 <img width="1920" height="1048" alt="image" src="https://github.com/user-attachments/assets/f45e895d-c156-4b47-9890-5b0b403f923d" />
 
