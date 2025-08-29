@@ -1,4 +1,3 @@
-#Made by SimpleCarrot42 - Simple Terminal Clock and Perfomance monitor
 import psutil
 from datetime import datetime
 from textual.app import App, ComposeResult
@@ -6,7 +5,21 @@ from textual.widgets import Digits, Label
 from textual.containers import Container
 from textual.reactive import reactive
 
+
 BYTES_IN_GB = 1024 ** 3
+
+
+def color_for_percent(percent: float) -> str:
+    if 0 <= percent < 15:
+        return "white"
+    elif 15 <= percent < 45:
+        return "green"
+    elif 45 <= percent < 85:
+        return "orange"
+    elif 85 <= percent <= 100:
+        return "red"
+    else:
+        return "white"
 
 
 class PerformanceMonitor(Label):
@@ -27,15 +40,17 @@ class PerformanceMonitor(Label):
         self.cpu_percent = psutil.cpu_percent(interval=None)
 
         mem = psutil.virtual_memory()
-        # Use psutil's computed percent so it's consistent across OSes
         self.ram_percent = float(mem.percent)
         self.ram_used_gb = mem.used / BYTES_IN_GB
         self.ram_total_gb = mem.total / BYTES_IN_GB
 
     def render(self) -> str:
+        cpu_color = color_for_percent(self.cpu_percent)
+        ram_color = color_for_percent(self.ram_percent)
+
         return (
-            f"CPU: {self.cpu_percent:4.1f}% "
-            f"| RAM: {self.ram_percent:4.1f}% "
+            f"CPU: [{cpu_color}]{self.cpu_percent:4.1f}%[/] "
+            f"| RAM: [{ram_color}]{self.ram_percent:4.1f}%[/]"
         )
 
 
