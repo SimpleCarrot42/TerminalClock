@@ -1,5 +1,5 @@
 # TerminalClock
-A simple terminal based **TUI clock** with a basic performance monitor, made with psutil and Textual, It displays the systems time in bold and helps you keep an eye on your **RAM** and **CPU** *(This can be easily changed)*. As of the latest update the color of the CPU and RAM percentage changes on their value *(White = < 10 Green = < 40 Orange = < 70 Red = > 70 )*
+A simple terminal based **TUI clock** with a basic performance monitor, made with psutil and Textual, It displays the systems time in bold and helps you keep an eye on your **RAM** and **CPU** *(This can be easily changed)*. As of the latest update the color of the CPU / RAM percentage changes depending on it's value *(White = < 10 Green = < 40 Orange = < 70 Red = > 70 )*
 
 To run the app you need to:
 #### 1. Clone the repository
